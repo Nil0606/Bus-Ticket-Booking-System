@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block content %} 
+<div class="formcontainer">
+  <h2>Register</h2>
+  {% if messages %} {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endfor %}
+{% endif %}
+  <form action="/register/" method="post">
+    {% csrf_token %}
+  <div class="mb-3 mt-3">
+    <label for="firstname">First Name:</label>
+    <input type="text" class="form-control form-control-sm" id="firstname" placeholder="Enter First Name" name="firstname">
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="lastname">Last Name:</label>
+    <input type="text" class="form-control form-control-sm" id="lastname" placeholder="Enter Last Name" name="lastname">
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="username">User Name:</label>
+    <input type="text" class="form-control form-control-sm" id="username" placeholder="Enter User Name" name="username">
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control form-control-sm" id="email" placeholder="Enter email" name="email">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" class="form-control form-control-sm" id="password" placeholder="Enter password" name="password">
+  </div>
+  <div class="mb-3">
+    <input type="password" class="form-control form-control-sm" id="repassword" placeholder="Enter password again" name="repassword">
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</div>
+
+{% endblock %}

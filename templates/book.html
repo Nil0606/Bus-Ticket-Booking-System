@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="formcontainer">
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Boooking For</h5>
+    <p>Bus Name: {{bus.bus_name}}</p>
+    <p>Source: {{bus.source}}</p>
+    <p>Destination: {{bus.dest}}</p>
+    <p>Ticket Price: {{bus.price}}</p>
+    <p>Date : {{bus.date|date:"d M Y"}}</p>
+    <p>Time : {{bus.time}}</p>
+  </div>
+</div>
+  {% if messages %} {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endfor %} {% endif %}
+  <form action="" method="post">
+    {% csrf_token %}
+  <div class="mb-3 mt-3">
+    <label for="ticket">Enter Number of Tickets:</label>
+    <input type="Number" class="form-control form-control-sm" id="ticket" placeholder="Enter User Name" name="tickets">
+  </div>
+  <button type="submit" class="btn btn-primary">Book</button>
+</form>
+</div>
+
+{% endblock %}

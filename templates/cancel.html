@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+<div class="booking_container">
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Bus Name</th>
+          <th scope="col">Source</th>
+          <th scope="col">Destiantion</th>
+          <th scope="col">Booking Date and Time</th>
+          <th scope="col">Cancellation Date and Time</th>
+          <th scope="col">Bookig Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for booking in bookings %}
+          <tr>
+          <td>{{booking.bus.bus_name}}</td>
+          <td>{{booking.bus.source}}</td>
+          <td>{{booking.bus.dest}}</td>
+          <td>{{booking.created|date:"d M Y"}} <b>{{ booking.created|time:"P" }}</td>
+          <td>{{booking.updated|date:"d M Y"}} <b>{{ booking.updated|time:"P" }}</td>
+          <td>{{booking.cost}} Rs</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

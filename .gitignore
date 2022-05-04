@@ -1,0 +1,7 @@
+#files that ignored by git
+myenv
+.env
+*.log
+*.pot
+*.pyc
+__pycache__

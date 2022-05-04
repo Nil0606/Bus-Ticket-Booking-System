@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="login_container">
+  <h1>Login</h1>
+  {% if messages %} {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endfor %} {% endif %}
+
+  <form action="/login/" method="post">
+    
+    {% csrf_token %}
+  <div class="mb-3 mt-3">
+    <label for="username">User Name:</label>
+    <input type="text" class="form-control form-control-sm" id="username" placeholder="Enter User Name" name="username">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" class="form-control form-control-sm" id="password" placeholder="Enter password" name="password">
+  </div>
+  {% if request.GET.next %}
+  <input type="hidden" name="next" value={{request.GET.next}} >
+  {% endif %}
+  
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+{% endblock %}
