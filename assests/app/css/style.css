@@ -1,0 +1,51 @@
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.navbar-brand{
+    color: blueviolet !important;
+    font-weight: 500 !important;
+}
+.navbar-brand:hover{
+    color: black !important;
+}
+.nav-link{
+    border-radius: 25px !important;
+    margin: 0px 30px;
+    background-color: white;
+}
+.nav-link:hover{
+    background-color: blueviolet;
+    color: white !important;
+}
+
+.formcontainer{
+    width: 40vw;
+    margin: 70px auto auto auto;
+}
+.login_container{
+    width: 40vw;
+    margin: 70px auto auto auto;
+}
+.notice-detail{
+    margin-top: 70px;
+}
+.image_container{
+    width: 40%;
+    margin: 0px auto;
+}
+.image_container > img{
+    width: 100%;
+}
+.text-container{
+    margin: 70px auto 0px auto;
+    text-align: center;
+    width: 40vh;
+}
+.search-container{
+    margin:70px 0px 0px 0px;
+}
+.booking_container{
+    margin:70px 0px 0px 0px;
+}
